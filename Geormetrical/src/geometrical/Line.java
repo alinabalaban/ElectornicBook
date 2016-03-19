@@ -9,6 +9,9 @@ package geometrical;
  *
  * @author Alina
  */
-public class Line {
+public class Line extends GeometricalFigure {
+     draw(){
+        System.out.println("Draw a line");
+    }
     
 }
