@@ -9,6 +9,10 @@ package geometrical;
  *
  * @author Alina
  */
-public class Triangle {
+public class Triangle extends GeometricalFigure {
+     @Override
+ public void draw(){
+        System.out.println("Draw a Triangle");
+    }
     
 }

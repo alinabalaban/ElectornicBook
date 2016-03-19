@@ -9,6 +9,14 @@ package geometrical;
  *
  * @author Alina
  */
-public class Square {
+public class Square extends Rectangle{
+
+    /**
+     *
+     */
+    @Override
+     public void draw(){
+        System.out.println("Draw a Square");
+    }
     
 }

@@ -10,7 +10,12 @@ package geometrical;
  * @author Alina
  */
 public class Line extends GeometricalFigure {
-     draw(){
+
+    /**
+     *
+     */
+    @Override
+     public void draw(){
         System.out.println("Draw a line");
     }
     
