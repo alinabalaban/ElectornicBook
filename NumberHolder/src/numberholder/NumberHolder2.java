@@ -12,10 +12,10 @@ package numberholder;
 public class NumberHolder2 {
     public int anInt=2;
     public float aFloat=3;
-    public void display(){
-    anInt=0;
-    aFloat=3;
-    System.out.println("anInt is "+anInt+"aFloat is "+ aFloat);
+    public void display(int a, int b){
+    anInt=a;
+    aFloat=b;
+    System.out.println("anInt is "+anInt+" aFloat is "+ aFloat);
     }
     
 }

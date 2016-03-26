@@ -16,7 +16,7 @@ public class NumberHolder {
      */
     public static void main(String[] args) {
       NumberHolder2 myNumberHolder= new NumberHolder2();
-      myNumberHolder.display();
+      myNumberHolder.display(2,3);
       
     }
     
