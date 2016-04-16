@@ -5,6 +5,11 @@
  */
 package collections;
 
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.LinkedList;
+
 /**
  * This application manages a store of electronic books format.
  * 
@@ -17,6 +22,8 @@ public class ElectronicBooksStore {
         // declare an array of ElectronicBooks
         ElectronicBook[] books;
         books = new ElectronicBook[3];
+
+        
 
         // create a new eBook
         String isbn = "978-606-758-671-8";
@@ -88,5 +95,84 @@ public class ElectronicBooksStore {
             //System.out.println("Book remarks and notes: "+books[index].getRemarksAndNotes()[0]);
             System.out.println("------------------------------------------------------------------");
         }
+       
+       
+       
+       HashSet bibliotecaMea;
+        bibliotecaMea = new HashSet <>();
+            
+                   // create a new eBook
+         isbn = "978-606-758-671-8";
+         authors = new String[]{"Lev Grossman","Mira Grossman"};
+        eBook = new EBook(isbn, authors);
+        eBook.setTitle("Taramul Magicianului");
+        eBook.setPrice(20.93f);
+        eBook.setElectronicFormat(ElectronicBook.FormatOfElectronicBook.DRM);
+        eBook.setRecommendedReader(EBook.eBooksReaders.AMAZON);
+        eBook.setPublisher("Nemira");
+        eBook.setYearOfPublication(ElectronicBook.YearOfPublication.Y2016);
+        downloadLinks = new String[]{
+            "http://www.elefant.ro/ebooks/fictiune/literatura-de-divertisment/sf-fantasy/taramul-magicianului-al-treilea-volum-al-seriei-magicienii-322807.html"
+        };
+        eBook.setRemarksAndNotes(new String[] {""});
+        eBook.setDownloadLinks(downloadLinks);
+        // Add eBook to the books
+        bibliotecaMea.add((ElectronicBook)eBook);
+         // create a new eBook
+        isbn = "978-606-758-667-1";
+        authors = new String[]{"Bogdan Munteanu"};
+        eBook = new EBook(isbn, authors);
+        eBook.setTitle("Ai uitat sa zambesti.");
+        eBook.setPrice(12.53f);
+        eBook.setElectronicFormat(ElectronicBook.FormatOfElectronicBook.DRM);
+        eBook.setRecommendedReader(EBook.eBooksReaders.AMAZON);
+        eBook.setPublisher("Nemira");
+        eBook.setYearOfPublication(ElectronicBook.YearOfPublication.Y2016);
+        downloadLinks = new String[]{
+            "http://www.elefant.ro/ebooks/fictiune/literatura-romana/literatura-romana-contemporana/ai-uitat-sa-razi-322805.html"
+        };
+        eBook.setDownloadLinks(downloadLinks);
+        eBook.setRemarksAndNotes(new String[] {""});
+        // Add eBook to the books
+        bibliotecaMea.add((ElectronicBook)eBook);      
+         // create a new eBook
+        isbn = "978-606-758-667-3";
+        authors = new String[]{"Dany Ionathan","Sandy Marion", "Leonore Bittman"};
+         iBook = new IBook(isbn, authors);
+        iBook.setTitle("The Swift Programming Language (Swift 2.2)");
+        iBook.setPrice(0.00f);
+        iBook.setElectronicFormat(ElectronicBook.FormatOfElectronicBook.IBA);
+        iBook.setRecommendedReader(IBook.iBooksReaders.APPIPAD);
+        iBook.setPublisher("Apple");
+        iBook.setYearOfPublication(ElectronicBook.YearOfPublication.Y2014);
+        downloadLinks = new String[]{
+            "https://itunes.apple.com/us/store?mt=11"
+        };  
+        iBook.setDownloadLinks(downloadLinks);
+        eBook.setRemarksAndNotes(new String[] {"This is a great iBook!", "I recommend it!"});
+        // Add eBook to the books
+        
+       bibliotecaMea.add((ElectronicBook)iBook);
+               
+               Iterator it = bibliotecaMea.iterator();
+    while (it.hasNext()) {
+            ElectronicBook currentBook = (ElectronicBook)it.next();
+            System.out.println("Book title: "+currentBook.getTitle());
+            System.out.println("Book ISBN: "+currentBook.getISBN());
+            System.out.println("Book Publisher: "+currentBook.getPublisher());
+            String[] authorsOfThisBook = currentBook.getAuthors();
+            int numberOfAuthors = authorsOfThisBook.length;
+            for(int currentAuthor=0;currentAuthor<numberOfAuthors;currentAuthor++)
+            {
+                System.out.println("Book author: "+ authorsOfThisBook[currentAuthor]);
+            }
+            //System.out.println("Book Authors: "+books[index].getAuthors()[0]);
+            System.out.println("Book Price: "+currentBook.getPrice());
+            System.out.println("Book format: "+currentBook.getElectronicFormat());
+            System.out.println("Book year of publication: "+currentBook.getYearOfPublication());
+            //System.out.println("Book remarks and notes: "+books[index].getRemarksAndNotes()[0]);
+            System.out.println("------------------------------------------------------------------");
+        }
+        
     }
 }
